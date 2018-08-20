@@ -24,4 +24,12 @@ describe('AppComponent', () => {
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelector('h1').textContent).toContain('Welcome to mario!');
     }));
+
+    it('should render gamecanvas', async(() => {
+        const fixture = TestBed.createComponent(AppComponent);
+        fixture.detectChanges();
+        const compiled = fixture.debugElement.nativeElement;
+
+        expect(compiled.querySelector('canvas')).not.toBeNull('No canvas element');
+    }));
 });
