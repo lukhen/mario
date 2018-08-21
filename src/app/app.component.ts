@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { images } from '../engine/images';
 
 @Component({
     selector: 'app-root',
@@ -8,5 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
     title = 'mario';
 
-    ngOnInit() { }
+    ngOnInit() {
+        images.loadAll().then(() => {
+            this.tick();
+        }).catch(() => {
+            console.log("asdfad");
+        })
+    }
+
+    tick() {
+        window.requestAnimationFrame(() => {
+            this.tick();
+        })
+    }
 }
