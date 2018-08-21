@@ -8,28 +8,32 @@ describe('AppComponent', () => {
             ],
         }).compileComponents();
     }));
-    it('should create the app', async(() => {
+    it('should create the app', (done) => {
         const fixture = TestBed.createComponent(AppComponent);
         const app = fixture.debugElement.componentInstance;
         expect(app).toBeTruthy();
-    }));
-    it(`should have as title 'app'`, async(() => {
+        done();
+    });
+    it(`should have as title 'app'`, (done) => {
         const fixture = TestBed.createComponent(AppComponent);
         const app = fixture.debugElement.componentInstance;
         expect(app.title).toEqual('mario');
-    }));
-    it('should render title in a h1 tag', async(() => {
+        done();
+    });
+    it('should render title in a h1 tag', (done) => {
         const fixture = TestBed.createComponent(AppComponent);
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelector('h1').textContent).toContain('Welcome to mario!');
-    }));
+        done();
+    });
 
-    it('should render gamecanvas', async(() => {
+    it('should render gamecanvas', (done) => {
         const fixture = TestBed.createComponent(AppComponent);
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
 
         expect(compiled.querySelector('canvas')).not.toBeNull('No canvas element');
-    }));
+        done();
+    });
 });
