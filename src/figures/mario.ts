@@ -343,9 +343,10 @@ export class Mario extends GameObject {
         this.set_ty((calc_row(this.get_ty()) + 1) * setup.square_size);
     }
 
-    // !!!
-    bumpLeft() {
 
+    bumpLeft() {
+        this.vx = 0;
+        this.set_lox((1 + calc_col(this.get_lox())) * setup.square_size)
     }
 
 
