@@ -302,6 +302,10 @@ export class Mario extends GameObject {
         return obstaclesOnTheRight;
     }
 
+    getObstaclesOnTheLeft(obstacles: Matter[][]) {
+        return [];
+    }
+
 
     handleCollisionsWithObstacles(obstacles: Matter[][]) {
         if (this.feetCollision(obstacles))

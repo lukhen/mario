@@ -285,6 +285,13 @@ describe("Collisions", () => {
                 [u, s, u, u],
                 [u, u, u, u]]
         expect(m.leftCollision(o)).toBeFalsy('Mario in the middle of the 2x2 square');
+        expect(m.getObstaclesOnTheLeft(o)).toEqual([]);
+        expect(m.get_lox()).toBeGreaterThan(64);
+
+        m.set_lox(64);
+        expect(m.get_lox()).toEqual(64);
+        expect(m.getObstaclesOnTheLeft(o)).toEqual([], "obst on the left don't equal[s]");
+        expect(m.rightCollision(o)).toBeFalsy();
     })
 
 
