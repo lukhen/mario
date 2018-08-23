@@ -303,7 +303,17 @@ export class Mario extends GameObject {
     }
 
     getObstaclesOnTheLeft(obstacles: Matter[][]) {
-        return [];
+        let obstaclesOnTheLeft = [],
+            ty_row = calc_row(this.get_ty()),
+            by_row = calc_row(this.get_by()),
+            lox_col = calc_col(this.get_lox());
+
+        for (let row = ty_row; row <= by_row; row++) {
+            if (obstacles[row][lox_col]) {
+                obstaclesOnTheLeft.push(obstacles[row][lox_col]);
+            }
+        }
+        return obstaclesOnTheLeft;
     }
 
 

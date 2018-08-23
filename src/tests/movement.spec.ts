@@ -297,6 +297,10 @@ describe("Collisions", () => {
         expect(m.get_lox()).toEqual(63);
         expect(m.getObstaclesOnTheLeft(o)).toEqual([s], "obst on the left don't equal[s]");
         expect(m.leftCollision(o)).toBeTruthy('left collision is falsy');
+        m.bumpLeft();
+        expect(m.get_lox()).toEqual(64);
+        expect(m.getObstaclesOnTheLeft(o)).toEqual([], "obst on the left is not empty");
+        expect(m.leftCollision(o)).toBeFalsy();
 
     })
 
