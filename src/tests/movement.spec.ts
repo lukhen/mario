@@ -275,6 +275,18 @@ describe("Collisions", () => {
 
     })
 
+    it("should handle left collision with stone", () => {
+        let m = new Mario(2, 2, 32, 38),
+            s = new Stone(1, 2),
+            u = undefined,
+            o = [
+                [u, u, u, u],
+                [u, u, u, u],
+                [u, s, u, u],
+                [u, u, u, u]]
+        expect(m.leftCollision(o)).toBeFalsy('Mario in the middle of the 2x2 square');
+    })
+
 
 
 })
