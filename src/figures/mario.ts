@@ -375,8 +375,11 @@ export class Mario extends GameObject {
         return false;
     }
 
-    // !!!
     leftCollision(obstacles: Matter[][]) {
+        for (let o of this.getObstaclesOnTheLeft(obstacles)) {
+            if (o.blocking === GroundBlocking.right || o.blocking === GroundBlocking.all)
+                return true;
+        }
         return false;
     }
 
