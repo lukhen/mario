@@ -334,7 +334,7 @@ export class Mario extends GameObject {
 
     }
 
-    // !!!
+
     bumpRight() {
         // console.log(this.get_rox(), calc_col(this.get_rox()) * setup.square_size - 1);
         this.vx = 0;

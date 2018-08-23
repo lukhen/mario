@@ -275,25 +275,6 @@ describe("Collisions", () => {
 
     })
 
-    it("", () => {
-        let m = new Mario(1, 1, 32, 38),
-            s = new Stone(2, 0),
-            tg1 = new TopGrass(1, 2),
-            tg2 = new TopGrass(2, 2),
-            u = undefined,
-            obstacles = [
-                [u, u, u],
-                [u, u, s],
-                [u, tg1, tg2]]
-
-        m.set_rox(63);
-        console.log(m.get_rox(), m.get_lx());
-        m.set_vx(setup.walking_v);
-        m.move();
-        //m.handleCollisionsWithObstacles(obstacles);
-        console.log(m.get_rox(), m.get_lx());
-    })
-
 
 
 })
